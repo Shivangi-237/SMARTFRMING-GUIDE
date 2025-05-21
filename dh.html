@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Farming Guide</title>
+    <link rel="stylesheet" href="style1.css"/>
+  <link rel="stylesheet" href="chatbot/chatbot.css" />
+   <link rel="stylesheet" href="farming_tips_ui/tips.css" />
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="script1.js"></script>
+    <!-- Botpress Webchat -->
+
+    <script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2025/03/01/06/20250301064704-Y1Z9VQNM.js"></script>
+
+</head>
+<body>
+  
+    
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <button id="lang-en" class="active">English</button>
+        <button id="lang-hi">हिंदी</button>
+    </div>
+   
+   
+
+    <!-- Header -->
+    <header>
+        <div class="logo-container">
+            <img src="\images\logo.jpg" alt="Smart Farming Guide Logo">
+            <h1 class="en">Smart Farming Guide</h1>
+            <h1 class="hi" style="display:none">स्मार्ट फार्मिंग गाइड</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="en">Home</a><a href="#" class="hi" style="display:none">होम</a></li>
+                <li><a href="#" class="en">Dashboard</a><a href="#" class="hi" style="display:none">डैशबोर्ड</a></li>
+                <li><a href="#" class="en">About</a><a href="#" class="hi" style="display:none">हमारे बारे में</a></li>
+                <li><a href="#" class="en">Contact</a><a href="#" class="hi" style="display:none">संपर्क</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2 class="en">Empowering Farmers with AI Technology</h2>
+                <h2 class="hi" style="display:none">किसानों को एआई तकनीक से सशक्त बनाना</h2>
+                <p class="en">Get instant help with plant diseases, seed identification, and farming best practices.</p>
+                <p class="hi" style="display:none">पौधों की बीमारियों, बीज पहचान और कृषि के सर्वोत्तम तरीकों के साथ तत्काल सहायता प्राप्त करें।</p>
+                <button class="cta-button en">Explore Dashboard</button>
+                <button class="cta-button hi" style="display:none">डैशबोर्ड एक्सप्लोर करें</button>
+            </div>
+        </section>
+
+        <!-- Dashboard Section -->
+        <section class="dashboard">
+            <h2 class="en">Dashboard</h2>
+            <h2 class="hi" style="display:none">डैशबोर्ड</h2>
+            
+            <div class="dashboard-grid">
+                <!-- Disease Detection Card -->
+                <div class="dashboard-card" id="disease-detection">
+                    <div class="card-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="en">Disease Detection</h3>
+                    <h3 class="hi" style="display:none">रोग पहचान</h3>
+                    <p class="en">Upload plant images to detect diseases</p>
+                    <p class="hi" style="display:none">रोगों का पता लगाने के लिए पौधों की छवियां अपलोड करें</p>
+                    <button class="card-button en">Try Now</button>
+                    <button class="card-button hi" style="display:none">अभी आजमाएं</button>
+                </div>
+
+                <!-- Seed Identification Card -->
+                <div class="dashboard-card" id="seed-identification">
+                    <div class="card-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3 class="en">Seed Identification</h3>
+                    <h3 class="hi" style="display:none">बीज पहचान</h3>
+                    <p class="en">Identify plant seeds from images</p>
+                    <p class="hi" style="display:none">छवियों से पौधे के बीजों की पहचान करें</p>
+                    <button class="card-button en">Try Now</button>
+                    <button class="card-button hi" style="display:none">अभी आजमाएं</button>
+                </div>
+
+                <!-- Weather Forecast Card -->
+                <!-- Weather Forecast Card -->
+<div class="dashboard-card">
+    <div class="card-icon">
+        <i class="fas fa-cloud-sun"></i>
+    </div>
+    <h3 class="en">Weather Forecast</h3>
+    <h3 class="hi" style="display:none">मौसम पूर्वानुमान</h3>
+    <p class="en">Get localized weather predictions</p>
+    <p class="hi" style="display:none">स्थानीयकृत मौसम पूर्वानुमान प्राप्त करें</p>
+    <!-- Updated button with weather API integration -->
+    <button class="card-button en" onclick="window.location.href='weather_forcast_api/weather_frontend/weather.html'">View Forecast</button>
+    <button class="card-button hi" style="display:none" onclick="window.location.href='weather_forcast_api/weather_frontend/weather.html'">पूर्वानुमान देखें</button>
+</div>
+
+                <!-- Farming Tips Card -->
+                <div class="dashboard-card">
+                    <div class="card-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3 class="en">Farming Tips</h3>
+                    <h3 class="hi" style="display:none">कृषि युक्तियाँ</h3>
+                    <p class="en">Seasonal farming recommendations</p>
+                    <p class="hi" style="display:none">मौसमी कृषि संबंधी सिफारिशें</p>
+                   <div class="tip-button-wrapper">
+  <button class="card-button en" id="open-tips-btn">Read More</button>
+</div>
+
+
+                    <button class="card-button hi" style="display:none">और पढ़ें</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modals for Features -->
+        <!-- Disease Detection Modal -->
+        <div id="disease-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 class="en">Disease Detection</h2>
+                <h2 class="hi" style="display:none">रोग पहचान</h2>
+                <div class="upload-area">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p class="en">Upload plant image to detect diseases</p>
+                    <p class="hi" style="display:none">रोगों का पता लगाने के लिए पौधों की छवि अपलोड करें</p>
+                    <input type="file" id="disease-image" accept="image/*">
+                    <button id="analyze-disease" class="en">Analyze Image</button>
+                    <button id="analyze-disease" class="hi" style="display:none">छवि का विश्लेषण करें</button>
+                </div>
+                <div id="disease-result" style="display:none;">
+                    <h3 class="en">Detection Result</h3>
+                    <h3 class="hi" style="display:none">पहचान परिणाम</h3>
+                    <div id="result-content"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seed Identification Modal -->
+        <div id="seed-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 class="en">Seed Identification</h2>
+                <h2 class="hi" style="display:none">बीज पहचान</h2>
+                <div class="upload-area">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p class="en">Upload seed image for identification</p>
+                    <p class="hi" style="display:none">पहचान के लिए बीज छवि अपलोड करें</p>
+                    <input type="file" id="seed-image" accept="image/*">
+                    <button id="identify-seed" class="en">Identify Seed</button>
+                    <button id="identify-seed" class="hi" style="display:none">बीज की पहचान करें</button>
+                </div>
+                <div id="seed-result" style="display:none;">
+                    <h3 class="en">Identification Result</h3>
+                    <h3 class="hi" style="display:none">पहचान परिणाम</h3>
+                    <div id="seed-result-content"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="en">Smart Farming Guide</h3>
+                <h3 class="hi" style="display:none">स्मार्ट फार्मिंग गाइड</h3>
+                <p class="en">Empowering farmers with AI technology</p>
+                <p class="hi" style="display:none">किसानों को एआई तकनीक से सशक्त बनाना</p>
+            </div>
+            <div class="footer-section">
+                <h3 class="en">Quick Links</h3>
+                <h3 class="hi" style="display:none">त्वरित लिंक</h3>
+                <ul>
+                    <li><a href="#" class="en">Home</a><a href="#" class="hi" style="display:none">होम</a></li>
+                    <li><a href="#" class="en">Dashboard</a><a href="#" class="hi" style="display:none">डैशबोर्ड</a></li>
+                    <li><a href="#" class="en">About Us</a><a href="#" class="hi" style="display:none">हमारे बारे में</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 class="en">Contact Us</h3>
+                <h3 class="hi" style="display:none">संपर्क करें</h3>
+                <p><i class="fas fa-envelope"></i> info@smartfarmingguide.com</p>
+                <p><i class="fas fa-phone"></i> 123456789</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="en">&copy; 2023 Smart Farming Guide. All rights reserved.</p>
+            <p class="hi" style="display:none">&copy; 2023 स्मार्ट फार्मिंग गाइड। सर्वाधिकार सुरक्षित।</p>
+        </div>
+    </footer>
+
+    <!-- Chatbot Container (positioned at bottom left) -->
+   <!-- ── Launcher ─────────────────────────────────────────── -->
+<div id="chatbot-launcher">
+  <button id="robot-button">
+    <img src="chatbot/botty.jpg" alt="Ask AI" id="robot-img" />
+  </button>
+  <div id="ask-ai-text">Ask AI</div>
+</div>
+
+<!-- ── Chatbot ──────────────────────────────────────────── -->
+<div id="chatbot-container">
+  <div class="chatbot-bg-overlay"></div>
+
+  <!-- Header -->
+  <div class="chatbot-header">
+    <span>Smart Farming Assistant</span>
+    <select id="language-toggle">
+      <option value="en">English</option>
+      <option value="hi">हिन्दी</option>
+    </select>
+    <button id="close-chat">✕</button>
+  </div>
+
+  <!-- Quick options -->
+  <div id="chat-quick-options" class="hidden"></div>
+
+  <!-- Message area -->
+  <div id="chat-messages"></div>
+
+  <!-- Indicators -->
+  <div id="speak-now" class="hidden">🔊 Speaking…</div>
+  <div id="listen-now" class="hidden">🎙️ Listening...</div>
+
+  <!-- Input area -->
+  <div class="input-area">
+    <input type="text" id="user-input" placeholder="Type your question…" />
+    <div class="btn-group">
+      <button id="send-btn">Send</button>
+      <button id="tts-btn">🔊 Speak</button>
+      <button id="voice-toggle-btn">Voice: Off</button>
+    </div>
+  </div>
+</div>
+
+    <!-- Quick Options (Add this before #chat-messages) -->
+
+
+
+  <script src="weather_frontend/weatherscript.js"></script>
+   <script src="chatbot/chatbot.js"></script>
+   <script src="farming_tips_ui/tips.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background: url('images/sku.jpg.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  height: 100vh;
+  justify-content: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+header p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: auto;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.controls select, .controls input, .controls button {
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.7);
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.controls select:focus, .controls input:focus, .controls button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: scale(1.05);
+}
+
+.weather-info {
+  display: none; /* Initially hidden */
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: #fff;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Weather condition animation styles */
+.sunny {
+  background: url('images/sunny.jpg') no-repeat center center fixed;
+  background-size: cover;
+  animation: sunnyAnim 3s ease-in-out infinite;
+}
+
+.rainy {
+  background: url('images/rainy.jpg') no-repeat center center fixed;
+  background-size: cover;
+  animation: rainyAnim 3s ease-in-out infinite;
+}
+
+.windy {
+  background: url('images/windy.jpg') no-repeat center center fixed;
+  background-size: cover;
+  animation: windyAnim 3s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes sunnyAnim {
+  0% { background-position: center top; }
+  100% { background-position: center bottom; }
+}
+
+@keyframes rainyAnim {
+  0% { background-position: center top; }
+  100% { background-position: center bottom; }
+}
+
+@keyframes windyAnim {
+  0% { background-position: center top; }
+  100% { background-position: center bottom; }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .controls select, .controls input, .controls button {
+    width: 100%;
+  }
+}

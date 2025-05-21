@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Farming Assistant</title>
+  <link rel="stylesheet" href="chatbot.css"/>
+</head>
+
+<body>
+  <!-- launcher ----------------------------------------------------------- -->
+  <div id="chatbot-launcher">
+    <button id="robot-button">
+      <img src="botty.jpg" id="robot-img" alt="Chatbot" />
+    </button>
+    <div id="ask-ai-text">Ask AI</div>
+  </div>
+
+  <!-- chatbot ------------------------------------------------------------ -->
+  <div id="chatbot-container">
+    <div class="chatbot-header">
+      <!-- ✨ tiny white-glass strip over the image only -->
+      <div class="chatbot-bg-overlay"></div>
+
+      <span>Smart Farming Assistant</span>
+
+      <select id="language-toggle">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी</option>
+      </select>
+
+      <button id="close-chat">✕</button>
+    </div>
+
+    <!-- quick options -->
+    <div id="chat-quick-options" class="quick-options hidden">
+      <div class="option">🌱 <span class="option-label">Disease Detection</span></div>
+      <div class="option">🌾 <span class="option-label">Seed Identification</span></div>
+      <div class="option">☁️ <span class="option-label">Weather Forecast</span></div>
+      <div class="option">❓ <span class="option-label">General Help</span></div>
+    </div>
+
+    <!-- scrollable messages -->
+    <div id="chat-messages"></div>
+
+    <!-- speaking indicator -->
+    <div id="speak-now">🔊 Speaking…</div>
+
+    <!-- input & buttons -->
+    <div class="input-area">
+      <input id="user-input" type="text" placeholder="Type your question…"/>
+      <div class="btn-group">
+        <button id="send-btn">Send</button>
+        <button id="tts-btn">🎤</button>
+        <button id="voice-toggle-btn">Voice Off</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="chatbot.js"></script>
+</body>
+</html>
